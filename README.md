@@ -55,14 +55,14 @@ Version Control: Git & GitHub
 
 ## 📂 Project Structure
 
+```
 ProGuide/
 │
 ├── frontend/
 ├── backend/
 ├── database/
 ├── docs/
-
----
+```
 
 ## 🔮 Future Enhancements
 
