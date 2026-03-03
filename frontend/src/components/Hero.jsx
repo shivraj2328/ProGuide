@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Components/Hero.css";
+import { Link } from "react-router-dom";
 import mentoring from "../assets/Mentoring-hero-section.png"
 const Hero = () => {
   return (
@@ -14,16 +15,17 @@ const Hero = () => {
           </h1>
 
           <p>
-          Hi, I’m ProGuide — your bridge to experts who guide your career growth.</p>
+            Hi, I’m ProGuide — your bridge to experts who guide your career growth.</p>
 
           <div className="hero-buttons">
             <button className="primary-btn">
               Find a Professional
             </button>
-
-            <button className="secondary-btn">
-              Become a Professional
-            </button>
+            <Link to="/become-professional">
+              <button className="secondary-btn">
+                Become a Professional
+              </button>
+            </Link>
           </div>
         </div>
 

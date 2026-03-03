@@ -16,14 +16,14 @@ const Navbar = () => {
                 <ul>
                     <li><Link to={"/"}>Home</Link></li>
                     <li><Link to={""}>Search</Link></li>
-                    <li><Link to={""}>About</Link></li>
+                    <li><Link to="/about">About</Link></li>                    
                     <li><Link to={""}>Login</Link></li>
                     <li><Link to={""}>Register</Link></li>
                 </ul>
             </div>
 
             {/* Hamburger */}
-            <div 
+            <div
                 className="hamburger"
                 onClick={() => setMenuOpen(!menuOpen)}
             >

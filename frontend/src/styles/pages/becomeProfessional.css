@@ -1,0 +1,89 @@
+/* Page Container */
+.become-container {
+  min-height: 100vh;
+  padding: 60px 20px;
+  background: #f9fafc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Heading */
+.become-container h1 {
+  font-size: 2rem;
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+.become-container p {
+  max-width: 600px;
+  color: #555;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+/* Form Card */
+.professional-form {
+  width: 100%;
+  max-width: 600px;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: left;
+}
+
+/* Inputs */
+.professional-form input,
+.professional-form select,
+.professional-form textarea {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  transition: 0.3s ease;
+}
+
+/* Focus Effect */
+.professional-form input:focus,
+.professional-form select:focus,
+.professional-form textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+/* Button */
+.professional-form button {
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.professional-form button:hover {
+  background: #1e4fd8;
+  transform: translateY(-2px);
+}
+
+
+/* Responsive  */
+@media (max-width: 768px) {
+  .become-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .professional-form {
+    padding: 25px;
+  }
+}
