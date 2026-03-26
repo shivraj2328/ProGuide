@@ -31,9 +31,9 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-box">
-        <h2>Login to ProGuide</h2>
+    <div className="auth-container">
+      <div className="auth-box">
+        <h2>Create Account</h2>
 
         {error && <p className="error">{error}</p>}
 
