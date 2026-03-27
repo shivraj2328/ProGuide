@@ -4,6 +4,7 @@ import About from "./pages/About";
 import BecomeProfessional from "./pages/BecomeProfessional";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Search from "./pages/Search";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/become-professional" element={<BecomeProfessional />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+<Route path="/search" element={<Search />} />
       </Routes>
     </BrowserRouter>
   );
