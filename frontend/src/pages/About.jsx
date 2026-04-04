@@ -5,7 +5,7 @@ import "../styles/About.css";
 const About = () => {
     return (
         <>
-            <Navbar />
+         
             <div className="about">
                 <div className="about-container">
                     <h1>About ProGuide</h1>
