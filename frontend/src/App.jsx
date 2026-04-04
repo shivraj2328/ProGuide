@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";   // ✅ ADD THIS
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import BecomeProfessional from "./pages/BecomeProfessional";
@@ -9,14 +11,20 @@ import Search from "./pages/Search";
 function App() {
   return (
     <BrowserRouter>
+
+      {/* ✅ Navbar always visible */}
+      <Navbar />
+
+      {/* ✅ Page content */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/become-professional" element={<BecomeProfessional />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-<Route path="/search" element={<Search />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
+
     </BrowserRouter>
   );
 }
