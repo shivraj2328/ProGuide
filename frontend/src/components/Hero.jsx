@@ -18,9 +18,11 @@ const Hero = () => {
             Hi, I’m ProGuide — your bridge to experts who guide your career growth.</p>
 
           <div className="hero-buttons">
-            <button className="primary-btn">
-              Find a Professional
-            </button>
+            {/* <button className="primary-btn"> */}
+              <Link to="/search">
+                <button className="primary-btn">Find a Professional</button>
+              </Link>
+              {/* </button> */}
             <Link to="/become-professional">
               <button className="secondary-btn">
                 Become a Professional

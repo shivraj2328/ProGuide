@@ -1,7 +1,11 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
-import "../styles/pages/becomeProfessional.css"
+import "../styles/pages/becomeProfessional.css";
+import Footer from "../components/Footer";
+
 const BecomeProfessional = () => {
+    const [loading, setLoading] = useState(false);
+
     const [formData, setFormData] = useState({
         name: "",
         title: "",
@@ -9,7 +13,25 @@ const BecomeProfessional = () => {
         experience: "",
         organization: "",
         bio: "",
+        location: "",
+        skills: "",
+        education: "",
+        linkedin: "",
+        email: "",
+        availability: "",
+        sessionFee: ""
     });
+
+    const industries = [
+        "Technology",
+        "Finance",
+        "Healthcare",
+        "Education",
+        "Marketing",
+        "Design",
+        "Business",
+        "Other"
+    ];
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -20,26 +42,72 @@ const BecomeProfessional = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData);
 
-        // reset form
-        setFormData({
-            name: "",
-            title: "",
-            industry: "",
-            experience: "",
-            organization: "",
-            bio: "",
-        });
+        // ✅ Validation
+        if (!formData.name.trim()) {
+            alert("Name is required");
+            return;
+        }
+
+        if (!formData.email.trim()) {
+            alert("Email is required");
+            return;
+        }
+
+        if (!formData.sessionFee) {
+            alert("Session fee is required");
+            return;
+        }
+
+        if (!formData.industry) {
+            alert("Please select an industry");
+            return;
+        }
+
+        try {
+            setLoading(true); // 🔥 start loading
+
+            const res = await fetch("http://localhost:5000/add-professional", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const result = await res.text();
+            alert(result);
+
+            // ✅ Reset FULL form
+            setFormData({
+                name: "",
+                title: "",
+                industry: "",
+                experience: "",
+                organization: "",
+                bio: "",
+                location: "",
+                skills: "",
+                education: "",
+                linkedin: "",
+                email: "",
+                availability: "",
+                sessionFee: ""
+            });
+
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setLoading(false); // 🔥 stop loading
+        }
     };
 
     return (
         <>
-            <div>
-                <Navbar />
-            </div>
+            <Navbar />
+
             <div className="become-container">
                 <h1>Share Your Experience. Guide the Future.</h1>
                 <p>
@@ -49,71 +117,111 @@ const BecomeProfessional = () => {
                 <form className="professional-form" onSubmit={handleSubmit}>
 
                     <input
-                        type="text"
                         name="name"
                         placeholder="Full Name"
                         value={formData.name}
                         onChange={handleChange}
-                        required
                     />
 
                     <input
-                        type="text"
                         name="title"
-                        placeholder="Professional Title (e.g., Cardiologist, Advocate)"
+                        placeholder="Job Title"
                         value={formData.title}
                         onChange={handleChange}
-                        required
                     />
 
                     <select
                         name="industry"
                         value={formData.industry}
                         onChange={handleChange}
-                        required
                     >
                         <option value="">Select Industry</option>
-                        <option value="Technology">Technology</option>
-                        <option value="Healthcare">Healthcare</option>
-                        <option value="Finance">Finance</option>
-                        <option value="Law">Law</option>
-                        <option value="Education">Education</option>
-                        <option value="Business">Business</option>
-                        <option value="Government">Government</option>
-                        <option value="Other">Other</option>
+                        {industries.map((ind, index) => (
+                            <option key={index} value={ind}>
+                                {ind}
+                            </option>
+                        ))}
                     </select>
 
                     <input
-                        type="number"
                         name="experience"
-                        placeholder="Years of Experience"
+                        placeholder="Experience (years)"
                         value={formData.experience}
                         onChange={handleChange}
-                        required
                     />
 
                     <input
-                        type="text"
                         name="organization"
                         placeholder="Current Organization"
                         value={formData.organization}
                         onChange={handleChange}
-                        required
                     />
 
+                    {/* ✅ FIXED BIO */}
                     <textarea
                         name="bio"
-                        placeholder="Short Bio"
+                        placeholder="Write a short bio..."
                         value={formData.bio}
                         onChange={handleChange}
                         rows="4"
-                        required
                     />
 
-                    <button type="submit">Submit Profile</button>
+                    <input
+                        name="location"
+                        placeholder="Location"
+                        value={formData.location}
+                        onChange={handleChange}
+                    />
+
+                    <input
+                        name="skills"
+                        placeholder="Skills (comma separated)"
+                        value={formData.skills}
+                        onChange={handleChange}
+                    />
+
+                    <input
+                        name="education"
+                        placeholder="Education"
+                        value={formData.education}
+                        onChange={handleChange}
+                    />
+
+                    <input
+                        name="linkedin"
+                        placeholder="LinkedIn URL"
+                        value={formData.linkedin}
+                        onChange={handleChange}
+                    />
+
+                    <input
+                        name="email"
+                        placeholder="Email"
+                        value={formData.email}
+                        onChange={handleChange}
+                    />
+
+                    <input
+                        name="availability"
+                        placeholder="Availability (e.g. Weekends)"
+                        value={formData.availability}
+                        onChange={handleChange}
+                    />
+
+                    <input
+                        name="sessionFee"
+                        placeholder="Session Fee (₹)"
+                        value={formData.sessionFee}
+                        onChange={handleChange}
+                    />
+
+                    <button type="submit" disabled={loading}>
+                        {loading ? "Submitting..." : "Submit Profile"}
+                    </button>
 
                 </form>
             </div>
+            <Footer/>
         </>
     );
 };

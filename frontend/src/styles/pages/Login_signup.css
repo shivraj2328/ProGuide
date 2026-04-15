@@ -1,0 +1,94 @@
+/* Page background */
+.auth-container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f9fafb;
+}
+
+/* Form box */
+.auth-container form {
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Heading */
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #111827;
+}
+
+/* Inputs */
+.auth-container input,
+.auth-container select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+/* Focus effect */
+.auth-container input:focus,
+.auth-container select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Button */
+.auth-container button {
+  padding: 12px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Hover */
+.auth-container button:hover {
+  background: #2563eb;
+}
+
+/* Disabled */
+.auth-container button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Small text (optional) */
+.auth-footer {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.auth-footer a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .auth-container form {
+    padding: 25px;
+    margin: 0 15px;
+  }
+}
