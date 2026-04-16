@@ -78,7 +78,36 @@ nav {
     background: #2563EB;
     transform: translateY(-2px);
 }
+/* RIGHT SIDE CONTAINER */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
 
+/* NAV BUTTONS */
+.nav-btn {
+    padding: 8px 14px;
+    background-color: #3B82F6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.nav-btn:hover {
+    background-color: #2563EB;
+}
+
+.nav-btn.secondary {
+    background-color: #111827;
+}
+
+.nav-btn.secondary:hover {
+    background-color: #1F2937;
+}
 
 /*Resopnsive navbar*/
 

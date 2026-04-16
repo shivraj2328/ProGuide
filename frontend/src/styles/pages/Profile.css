@@ -69,7 +69,12 @@
   cursor: pointer;
   transition: 0.3s;
 }
-
+.date-input {
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
 .book-btn:hover {
   background: #2563eb;
 }
@@ -85,6 +90,64 @@
 
 .profile-link:hover {
   text-decoration: underline;
+}
+/* BOOKING SECTION */
+.booking-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* LABEL */
+.date-label {
+  font-weight: 600;
+  color: #111827;
+  font-size: 14px;
+}
+
+/* DATE INPUT */
+.date-input {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+}
+
+.date-input:focus {
+  border-color: #3b82f6;
+}
+
+.review-section {
+  margin-top: 30px;
+}
+
+.review-section select,
+.review-section textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.review-section button {
+  margin-top: 10px;
+  background: #3b82f6;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.review-card {
+  background: #f9fafb;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
 }
 
 /* Responsive */

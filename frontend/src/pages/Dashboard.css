@@ -1,0 +1,109 @@
+/* MAIN CONTAINER */
+.dashboard-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* TITLE */
+.dashboard-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #111827;
+}
+
+/* CARD */
+.dashboard-card {
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-3px);
+}
+
+/* STATUS COLORS */
+.status-pending {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.status-accepted {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.status-rejected {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* BUTTONS */
+.dashboard-btn {
+  padding: 8px 14px;
+  margin: 8px 6px 0 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+/* ACCEPT */
+.accept-btn {
+  background-color: #10b981;
+  color: white;
+}
+
+.accept-btn:hover {
+  background-color: #059669;
+}
+
+/* REJECT */
+.reject-btn {
+  background-color: #ef4444;
+  color: white;
+}
+
+.reject-btn:hover {
+  background-color: #dc2626;
+}
+
+/* VIEW DETAILS */
+.dashboard-btn:not(.accept-btn):not(.reject-btn) {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.dashboard-btn:not(.accept-btn):not(.reject-btn):hover {
+  background-color: #2563eb;
+}
+
+/* NO DATA */
+.no-data {
+  text-align: center;
+  color: #6b7280;
+}
+
+/* MY BOOKINGS BUTTON (IMPORTANT) */
+.my-bookings-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 18px;
+  background-color: #111827;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.my-bookings-btn:hover {
+  background-color: #1f2937;
+}

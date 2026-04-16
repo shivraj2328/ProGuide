@@ -6,6 +6,9 @@ import Search from "./pages/Search";
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import ProfessionalDashboard from "./pages/ProfessionalDashboard";
+import StudentDashboard from "./pages/StudentDashboard";
+
 
 
 function App() {
@@ -19,6 +22,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/search" element={<Search />} />
         <Route path="/profile/:id" element={<Profile />} />
+        <Route path="/professional-dashboard" element={<ProfessionalDashboard />} />
+        <Route path="/my-bookings" element={<StudentDashboard />} />
       </Routes>
     </BrowserRouter>
   );
