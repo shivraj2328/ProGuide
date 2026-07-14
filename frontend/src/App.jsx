@@ -6,7 +6,9 @@ import Search from "./pages/Search";
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-
+import ProfessionalDashboard from "./pages/ProfessionalDashboard";
+import StudentDashboard from "./pages/StudentDashboard";
+import PaymentConfirm from "./pages/PaymentConfirm";
 
 function App() {
   return (
@@ -19,6 +21,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/search" element={<Search />} />
         <Route path="/profile/:id" element={<Profile />} />
+        <Route path="/professional-dashboard" element={<ProfessionalDashboard />} />
+        <Route path="/student-dashboard" element={<StudentDashboard />} />
+        <Route path="/payment-confirm" element={<PaymentConfirm />} />
       </Routes>
     </BrowserRouter>
   );

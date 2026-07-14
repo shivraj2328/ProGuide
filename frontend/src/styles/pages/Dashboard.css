@@ -1,0 +1,209 @@
+.dashboard-container {
+  padding: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+
+.dashboard-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #111827;
+}
+
+
+.dashboard-card {
+  border: 1px solid #e5e7eb;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  transition: 0.3s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-3px);
+}
+
+
+.dashboard-card p {
+  margin: 6px 0;
+  color: #374151;
+}
+
+/* BUTTONS */
+.dashboard-btn {
+  padding: 8px 14px;
+  margin-top: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* ACCEPT */
+.accept-btn {
+  background-color: #10b981;
+  color: white;
+}
+
+.accept-btn:hover {
+  background-color: #059669;
+}
+
+/* REJECT */
+.reject-btn {
+  background-color: #ef4444;
+  color: white;
+}
+
+.reject-btn:hover {
+  background-color: #dc2626;
+}
+
+/* STATUS COLORS */
+.status-pending {
+  color: #f59e0b;
+  font-weight: 500;
+}
+
+.status-accepted {
+  color: #10b981;
+  font-weight: 500;
+}
+
+.status-rejected {
+  color: #ef4444;
+  font-weight: 500;
+}
+
+/* NO DATA */
+.no-data {
+  text-align: center;
+  color: #6b7280;
+  margin-top: 30px;
+}
+
+.pay-btn {
+  background: #635bff;
+  color: #fff;
+}
+
+.pay-btn:hover:not(:disabled) {
+  background: #4b45c6;
+}
+
+.pay-btn:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.meet-label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.meet-input {
+  width: 100%;
+  max-width: 420px;
+  margin-top: 6px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  box-sizing: border-box;
+}
+
+.resend-btn {
+  background: #2563eb;
+  color: #fff;
+}
+
+.resend-btn:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.resend-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.booking-group {
+  margin-bottom: 32px;
+}
+
+.booking-group-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+
+.booking-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.badge-scheduled {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.badge-pending {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.badge-completed {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.badge-rejected {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+
+.booking-card-scheduled {
+  border-left: 4px solid #3b82f6;
+}
+
+.booking-card-pending {
+  border-left: 4px solid #f59e0b;
+}
+
+.booking-card-completed {
+  border-left: 4px solid #8b5cf6;
+}
+
+.booking-card-rejected {
+  border-left: 4px solid #ef4444;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -24,7 +24,7 @@ The platform provides structured appointment booking, profile management, review
 ## 🛠️ Tech Stack
 
 Frontend: React.js  
-Backend: Node.js + Express.js  
+Backend: Node.js
 Database: MySQL  
 Authentication: JWT (JSON Web Token)  
 Email Service: Nodemailer  

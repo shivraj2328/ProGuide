@@ -157,7 +157,7 @@ const BecomeProfessional = () => {
                         onChange={handleChange}
                     />
 
-                    {/* ✅ FIXED BIO */}
+                    
                     <textarea
                         name="bio"
                         placeholder="Write a short bio..."

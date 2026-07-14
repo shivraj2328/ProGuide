@@ -8,7 +8,7 @@
   background: #f9fafb;
 }
 
-/* Form box */
+
 .auth-container form {
   background: #ffffff;
   padding: 35px;
@@ -21,14 +21,14 @@
   gap: 15px;
 }
 
-/* Heading */
+
 .auth-container h2 {
   text-align: center;
   margin-bottom: 15px;
   color: #111827;
 }
 
-/* Inputs */
+
 .auth-container input,
 .auth-container select {
   padding: 12px;
@@ -39,14 +39,14 @@
   transition: 0.2s;
 }
 
-/* Focus effect */
+
 .auth-container input:focus,
 .auth-container select:focus {
   border-color: #3b82f6;
   box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
 }
 
-/* Button */
+
 .auth-container button {
   padding: 12px;
   border: none;
@@ -58,18 +58,18 @@
   transition: 0.3s;
 }
 
-/* Hover */
+
 .auth-container button:hover {
   background: #2563eb;
 }
 
-/* Disabled */
+
 .auth-container button:disabled {
   background: #9ca3af;
   cursor: not-allowed;
 }
 
-/* Small text (optional) */
+
 .auth-footer {
   text-align: center;
   font-size: 14px;
@@ -85,10 +85,17 @@
   text-decoration: underline;
 }
 
-/* Responsive */
+
 @media (max-width: 500px) {
   .auth-container form {
     padding: 25px;
     margin: 0 15px;
   }
+}
+.field-error {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: -8px;
+  margin-bottom: 4px;
+  display: block;
 }

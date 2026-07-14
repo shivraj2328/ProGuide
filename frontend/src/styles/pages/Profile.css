@@ -43,7 +43,7 @@
   line-height: 1.6;
 }
 
-/* Grid Layout */
+
 .profile-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -56,11 +56,11 @@
   border-radius: 8px;
 }
 
-/* Button */
+
 .book-btn {
   margin-top: 25px;
   width: 100%;
-  padding: 12px;
+  padding: 13px;
   background: #3b82f6;
   color: white;
   font-size: 16px;
@@ -70,7 +70,7 @@
   transition: 0.3s;
 }
 
-.book-btn:hover {
+.book-btn:hover:not(:disabled) {
   background: #2563eb;
 }
 
@@ -87,6 +87,124 @@
   text-decoration: underline;
 }
 
+/* ── SLOT PICKER ── */
+.slot-picker-section {
+  margin-top: 28px;
+}
+
+.slot-picker-section h4 {
+  margin-bottom: 12px;
+  color: #111827;
+  border-left: 4px solid #3b82f6;
+  padding-left: 10px;
+}
+
+
+.day-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.day-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 68px;
+}
+
+.day-tab:hover {
+  border-color: #3b82f6;
+  background: #eff6ff;
+}
+
+.day-tab.active {
+  border-color: #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.day-name {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.day-date {
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+/* Slots grid */
+.slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Individual slot */
+.slot-btn {
+  position: relative;
+  padding: 10px 6px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.slot-btn:hover:not(:disabled) {
+  border-color: #3b82f6;
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+/* Selected slot */
+.slot-btn.slot-active {
+  border-color: #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* Booked / frozen slot */
+.slot-btn.slot-booked {
+  background: #f3f4f6;
+  border-color: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.slot-tag {
+  font-size: 10px;
+  font-weight: 600;
+  color: #ef4444;
+  background: #fee2e2;
+  padding: 1px 6px;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+}
+
+.slot-btn.slot-booked .slot-tag {
+  color: #9ca3af;
+  background: #e5e7eb;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .profile-grid {
@@ -96,5 +214,14 @@
   .profile-container {
     margin: 20px;
     padding: 20px;
+  }
+
+  .day-tabs {
+    gap: 8px;
+  }
+
+  .day-tab {
+    min-width: 58px;
+    padding: 8px 10px;
   }
 }

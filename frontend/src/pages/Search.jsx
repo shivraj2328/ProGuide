@@ -9,17 +9,53 @@ const Search = () => {
     const [search, setSearch] = useState("");
     const [industry, setIndustry] = useState("");
     const [loading, setLoading] = useState(true);
+    const [loadError, setLoadError] = useState(null);
     const [visibleCount, setVisibleCount] = useState(6);
 
     useEffect(() => {
-        fetch("http://localhost:5000/professionals")
-            .then(res => res.json())
-            .then(data => {
-                console.log("DATA:", data);
-                setProfessionals(data);
-                setLoading(false);
-            })
-            .catch(err => console.log(err));
+        let cancelled = false;
+
+        async function load() {
+            setLoadError(null);
+            try {
+                const res = await fetch("http://localhost:5000/professionals");
+                const text = await res.text();
+                let data;
+                try {
+                    data = text ? JSON.parse(text) : [];
+                } catch {
+                    throw new Error(
+                        res.ok
+                            ? "Invalid response from server"
+                            : text || `Server error (${res.status})`
+                    );
+                }
+                if (!res.ok) {
+                    throw new Error(
+                        typeof data === "string" ? data : `Server error (${res.status})`
+                    );
+                }
+                if (!cancelled) {
+                    setProfessionals(Array.isArray(data) ? data : []);
+                }
+            } catch (err) {
+                console.error(err);
+                if (!cancelled) {
+                    setLoadError(
+                        err.message ||
+                            "Could not load professionals. Is the backend running on port 5000?"
+                    );
+                    setProfessionals([]);
+                }
+            } finally {
+                if (!cancelled) setLoading(false);
+            }
+        }
+
+        load();
+        return () => {
+            cancelled = true;
+        };
     }, []);
 
     // filter data.
@@ -40,9 +76,29 @@ const Search = () => {
         );
     });
 
-    //LOADING STATE
     if (loading) {
         return <h2 style={{ textAlign: "center" }}>Loading...!</h2>;
+    }
+
+    if (loadError) {
+        return (
+            <>
+                <Navbar />
+                <div className="search-container">
+                    <h2 style={{ textAlign: "center", color: "#b91c1c" }}>
+                        Could not load professionals
+                    </h2>
+                    <p style={{ textAlign: "center", maxWidth: 520, margin: "12px auto" }}>
+                        {loadError}
+                    </p>
+                    <p style={{ textAlign: "center", color: "#6b7280", fontSize: "14px" }}>
+                        Start the API with <code>npm run dev</code> in the <code>backend</code> folder
+                        and fix MySQL connection if the server logs a database error.
+                    </p>
+                </div>
+                <Footer />
+            </>
+        );
     }
 
     return (
