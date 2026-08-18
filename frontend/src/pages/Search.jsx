@@ -16,7 +16,11 @@ const Search = () => {
             .then(res => res.json())
             .then(data => {
                 console.log("DATA:", data);
+
+                // set the professionals data to professionals
                 setProfessionals(data);
+
+                //if data fetched successfully , setLoading=false to remove the text.
                 setLoading(false);
             })
             .catch(err => console.log(err));
@@ -34,9 +38,10 @@ const Search = () => {
         ${item.skills}
     `.toLowerCase();
 
+
         return (
             combinedText.includes(searchText) &&
-            (industry === "" || item.industry === industry)
+            (industry === "" || item.industry === industry)    //industry wise filter
         );
     });
 
@@ -81,17 +86,19 @@ const Search = () => {
                         <p className="no-results">No results found</p>
                     )}
                 </div>
-            {visibleCount < filteredData.length && (
-                <button
-                    className="view-more-btn"
-                    onClick={() => setVisibleCount(prev => prev + 6)}
-                >
-                    View More
-                </button>
-            )}
-            
+
+                //view more button
+                {visibleCount < filteredData.length && (
+                    <button
+                        className="view-more-btn"
+                        onClick={() => setVisibleCount(prev => prev + 6)}
+                    >
+                        View More
+                    </button>
+                )}
+
             </div>
-            <Footer/>
+            <Footer />
         </>
     );
 };

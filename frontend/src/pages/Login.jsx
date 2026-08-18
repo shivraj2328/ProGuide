@@ -33,7 +33,7 @@ const Login = () => {
     if (res.status === 200) {
       const user = await res.json();
 
-      // ✅ SAVE USER
+      // SAVE USER
       localStorage.setItem("user", JSON.stringify(user));
 
       alert("Login successful");

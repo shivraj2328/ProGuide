@@ -19,10 +19,10 @@ const Hero = () => {
 
           <div className="hero-buttons">
             {/* <button className="primary-btn"> */}
-              <Link to="/search">
-                <button className="primary-btn">Find a Professional</button>
-              </Link>
-              {/* </button> */}
+            <Link to="/search">
+              <button className="primary-btn">Find a Professional</button>
+            </Link>
+            {/* </button> */}
             <Link to="/become-professional">
               <button className="secondary-btn">
                 Become a Professional

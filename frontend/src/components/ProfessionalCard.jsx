@@ -2,13 +2,13 @@ import React from "react";
 import "../styles/components/card.css";
 import { useNavigate } from "react-router-dom";
 
-
+//receives the data from the search.jsx
 const ProfessionalCard = ({ data }) => {
   const navigate = useNavigate();
   return (
     <div
       className="card"
-      onClick={() => navigate(`/profile/${data.id}`)} 
+      onClick={() => navigate(`/profile/${data.id}`)}
       style={{ cursor: "pointer" }}>
       <h3>{data.name}</h3>
       <p className="title">{data.title}</p>

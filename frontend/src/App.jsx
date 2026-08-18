@@ -22,6 +22,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/search" element={<Search />} />
         <Route path="/profile/:id" element={<Profile />} />
+
+        {/* dashboards : based on roles(student or professional) */}
         <Route path="/professional-dashboard" element={<ProfessionalDashboard />} />
         <Route path="/my-bookings" element={<StudentDashboard />} />
       </Routes>

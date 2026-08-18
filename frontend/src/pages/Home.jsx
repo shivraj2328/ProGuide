@@ -6,14 +6,14 @@ import React from 'react'
 import Footer from "../components/Footer";
 
 const Home = () => {
-    const [professionals, setProfessionals] = useState([]);
+    // const [professionals, setProfessionals] = useState([]);
 
-    useEffect(() => {
-        fetch("http://localhost:5000/professionals")
-            .then(res => res.json())
-            .then(data => setProfessionals(data))
-            .catch(err => console.log("Error: ",err));
-    }, []);
+    // useEffect(() => {
+    //     fetch("http://localhost:5000/professionals")
+    //         .then(res => res.json())
+    //         .then(data => setProfessionals(data))
+    //         .catch(err => console.log("Error: ",err));
+    // }, []);
 
     return (
         <>
