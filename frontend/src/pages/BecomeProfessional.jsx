@@ -106,7 +106,7 @@ const BecomeProfessional = () => {
 
     return (
         <>
-            <Navbar />
+            {/* <Navbar /> */}
 
             <div className="become-container">
                 <h1>Share Your Experience. Guide the Future.</h1>

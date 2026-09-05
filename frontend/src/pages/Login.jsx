@@ -62,7 +62,7 @@ const Login = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="auth-container">
         <h2>Login</h2>
         <form onSubmit={handleSubmit} autoComplete="off">

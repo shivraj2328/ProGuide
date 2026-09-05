@@ -83,7 +83,7 @@ const Search = () => {
     if (loadError) {
         return (
             <>
-                <Navbar />
+                {/* <Navbar /> */}
                 <div className="search-container">
                     <h2 style={{ textAlign: "center", color: "#b91c1c" }}>
                         Could not load professionals

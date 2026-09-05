@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";   // ✅ ADD THIS
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import BecomeProfessional from "./pages/BecomeProfessional";
@@ -13,6 +15,11 @@ import PaymentConfirm from "./pages/PaymentConfirm";
 function App() {
   return (
     <BrowserRouter>
+
+      {/* ✅ Navbar always visible */}
+      <Navbar />
+
+      {/* ✅ Page content */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -25,6 +32,7 @@ function App() {
         <Route path="/student-dashboard" element={<StudentDashboard />} />
         <Route path="/payment-confirm" element={<PaymentConfirm />} />
       </Routes>
+
     </BrowserRouter>
   );
 }
